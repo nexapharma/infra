@@ -1,4 +1,5 @@
 # ─── GitHub Actions OIDC Federation ─────────────────────────────────────────
+# Github Actions OIDC role (Passwordless authentication between Github account to ECR)
 #
 # Allows GitHub Actions workflows in your repos to assume an IAM role
 # without any long-lived AWS credentials stored in GitHub Secrets.

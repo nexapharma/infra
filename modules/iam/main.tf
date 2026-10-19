@@ -1,3 +1,9 @@
+#====================================================================
+# External Secrets Operator role — read secrets from AWS Secrets Manager
+# ArgoCD role — application controller service account 
+# AWS Load Balancer Controller role — manage ALBs from Kubernetes
+#======================================================================
+
 # ─── External Secrets Operator (ESO) IRSA Role ─────────────────────────────
 # Allows ESO to read secrets from AWS Secrets Manager
 
