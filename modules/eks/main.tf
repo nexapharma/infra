@@ -24,17 +24,36 @@ module "eks" {
     eks-pod-identity-agent = { most_recent = true }
   }
 
-  eks_managed_node_groups = {
-    main = {
-      instance_types = var.instance_types
-      min_size       = var.min_size
-      max_size       = var.max_size
-      desired_size   = var.desired_size
+#  eks_managed_node_groups = {
+#    main = {
+#      instance_types = var.instance_types
+#      min_size       = var.min_size
+#      max_size       = var.max_size
+#      desired_size   = var.desired_size
+#    }
+#  }
+
+
+
+eks_managed_node_groups = {
+  pharma-dev-node = {
+    instance_types = var.instance_types
+
+    min_size     = var.min_size
+    max_size     = var.max_size
+    desired_size = var.desired_size
+
+    launch_template = {
+      id      = aws_launch_template.eks_nodes.id
+      version = tostring(aws_launch_template.eks_nodes.latest_version)
+    }
+
+    tags = {
+      Project = var.project
+      Env     = var.env
     }
   }
+}
 
-  tags = {
-    Project = var.project
-    Env     = var.env
-  }
+
 }
