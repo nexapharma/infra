@@ -47,10 +47,10 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:${var.github_org}@344783926/frontend@1426855503:ref:refs/heads/main",
-        "repo:${var.github_org}@344783926/frontend@1426855503:ref:refs/heads/develop",
-        "repo:${var.github_org}@344783926/backend:ref:refs/heads/main",
-        "repo:${var.github_org}@344783926/backend:ref:refs/heads/develop",
+                "repo:nexapharma@344783926/frontend@1426855503:ref:refs/heads/main",
+                "repo:nexapharma@344783926/frontend@1426855503:ref:refs/heads/develop",
+                "repo:nexapharma@344783926/backend@1427903992:ref:refs/heads/main",
+                "repo:nexapharma@344783926/backend@1427903992:ref:refs/heads/develop"
       ]
     }
   }
